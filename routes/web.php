@@ -1,12 +1,21 @@
 <?php
 
+use App\Livewire\Form;
+use App\Livewire\Home;
+use App\Livewire\Post;
+use App\Livewire\User;
+use App\Livewire\Action;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LogoutController;
 
-// Route::get('/', fn () => view('welcome'));
+Route::get('/', fn () => view('welcome'));
+Route::get('home/{name?}', Home::class);
+Route::get('post', Post::class);
+Route::get('user', User::class);
+Route::get('form', Form::class);
+Route::get('action', Action::class);
 
 Route::middleware('auth')->group(function () {
-    Route::get('/', \App\Livewire\Home::class)->name('home');
     Route::get('about', \App\Livewire\About::class)->name('about');
     Route::get('contact', \App\Livewire\Contact::class)->name('contact');
     Route::get('timeline', \App\Livewire\Timeline::class)->name('timeline');
