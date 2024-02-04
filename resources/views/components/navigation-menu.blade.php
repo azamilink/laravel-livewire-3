@@ -7,7 +7,6 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <x-nav-link :active="request()->routeIs('about')" :href="route('about')">About</x-nav-link>
-                <x-nav-link :active="request()->routeIs('contact')" :href="route('contact')">Contact</x-nav-link>
                 <x-nav-link :active="request()->routeIs('timeline*')" :href="route('timeline')">Timeline</x-nav-link>
                 <x-nav-link :active="request()->routeIs('users*')" :href="route('users.index')">User</x-nav-link>
             </ul>

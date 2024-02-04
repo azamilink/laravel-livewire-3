@@ -5,6 +5,10 @@ use App\Livewire\Home;
 use App\Livewire\Post;
 use App\Livewire\User;
 use App\Livewire\Action;
+use App\Livewire\Images;
+use App\Livewire\Contact;
+use App\Livewire\Product;
+use App\Livewire\Uploaps;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LogoutController;
 
@@ -14,10 +18,13 @@ Route::get('post', Post::class);
 Route::get('user', User::class);
 Route::get('form', Form::class);
 Route::get('action', Action::class);
+Route::get('product', Product::class);
+Route::get('contact', Contact::class);
+Route::get('upload', Uploaps::class);
+Route::get('images', Images::class);
 
 Route::middleware('auth')->group(function () {
     Route::get('about', \App\Livewire\About::class)->name('about');
-    Route::get('contact', \App\Livewire\Contact::class)->name('contact');
     Route::get('timeline', \App\Livewire\Timeline::class)->name('timeline');
 
     Route::get('users', \App\Livewire\Users\Index::class)->name('users.index');
